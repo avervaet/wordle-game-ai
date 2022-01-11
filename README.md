@@ -32,3 +32,16 @@ Hints are an array filled with the following values:
 secret_word = "plane"
 guess = "large"
 hints = ["Present", "Present", "Absent", "Absent", "Valid"]
+
+
+## Becnhmark scores
+Average number of guess is calculated on 10000 random wordle game simulation.
+This value fluctuate but it gives an order of idea of the performance for each method.
+
+**RandomPlayer:**
+Randomly return a word at every step. It can guess the same word multiple times.
+* Average number of guess: 486.6
+
+**Player1:**
+Use hints to remove words from its pool. Randomly guess a word from its pool.
+* Average number of guess: 3.778

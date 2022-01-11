@@ -3,7 +3,7 @@ from word_scrapping import scrap_5_letter_words
 from wordle_simulator import Game
 from wordle_player import *
 
-NUMBER_OF_SIMULATION = 1000
+NUMBER_OF_SIMULATION = 10000
 DICTIONNARY_FILE = "dictionnaries/5_letters_words.txt"
 
 if not os.path.isfile(DICTIONNARY_FILE):
