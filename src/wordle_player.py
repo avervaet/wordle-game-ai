@@ -11,19 +11,20 @@ class Player():
         pass
 
 class Player1(Player):
+    """A basic player instance that randomly pick an available word
+    and use hints to refine its pool"""
     def __init__(self, word_list):
         Player.__init__(self, word_list)
-        self.remaining_words = set(word_list)
     
     def guess(self):
-        return random.choice(tuple(self.remaining_words))
+        return random.choice(tuple(self.dictionnary))
     
     def analyse_hints(self, guess, hints):
         for i,e in enumerate(hints):
             x = guess[i]
-            if e == "Valid":
-                self.remaining_words = set([word for word in self.remaining_words if word[i] == x])
-            elif e == "Present":
-                self.remaining_words = set([word for word in self.remaining_words if x in word])
-            elif e == "Absent":
-                self.remaining_words = set([word for word in self.remaining_words if x not in word])
+            if e == "correct":
+                self.dictionnary = set([word for word in self.dictionnary if word[i] == x])
+            elif e == "present":
+                self.dictionnary = set([word for word in self.dictionnary if x in word and word[i] != x])
+            elif e == "absent":
+                self.dictionnary = set([word for word in self.dictionnary if x not in word])

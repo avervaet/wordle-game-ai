@@ -32,10 +32,10 @@ class Game():
         hints = []
         for i,e in enumerate(guess):
             if e == secret_word[i]:
-                hints.append("Valid")
+                hints.append("correct")
             elif e in secret_word:
-                hints.append("Present")
+                hints.append("present")
             else:
-                hints.append("Absent")
+                hints.append("absent")
         return hints
             
