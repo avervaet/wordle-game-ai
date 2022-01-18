@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     #Read Config
     config = configparser.ConfigParser()
-    config.read('config.ini')
+    config.read('../config.ini')
 
     # Launch a browser on the Wordle main page
     browser = webdriver.Chrome(config['CHROMEDRIVER']['ChromedriverPath'])
